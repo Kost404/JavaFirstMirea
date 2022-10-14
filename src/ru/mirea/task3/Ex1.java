@@ -1,27 +1,43 @@
 package ru.mirea.task3;
+import java.util.Random;
 
 public class Ex1 {
-    public static void main(String[] args)
-    {
-        double a = 729.321;
-        String b = "8372";
-        Double x = Double.valueOf(a);
-        System.out.println("valueOf(a) = " + x);
-        x = Double.valueOf(b);
-        System.out.println("ValueOf(b) = " + x);
-        double val = Double.parseDouble(b);
-        System.out.println("parseDouble = " + val);
-        int c = (int)a;
-        byte d = (byte)a;
-        char e = (char)a;
-        short f = (short)a;
-        long g = (long)a;
-        float h = (float)a;
-        System.out.println("int = " + c + ", byte = " + d + ", char = " + e + ", short = " + f + ", long = " + g + ", float = " + h);
-        Double pi = 3.141592653589793;
-        String piStr = Double.toString(pi);
-        System.out.println("Pi String: " + piStr);
+    public static void main(String args[]){
+        int[] array = new int[10];
+        Random rand = new Random();
 
+        for(int i = 0; i < array.length; i++)
+            array[i] = (int)(Math.random() * 100);
 
+        printArray(array);
+        sortArray(array);
+
+        System.out.println();
+
+        for(int i = 0; i < array.length; i++)
+            array[i] = rand.nextInt(100);
+
+        printArray(array);
+        sortArray(array);
+
+    }
+
+    public static void sortArray(int[] array){
+        for(int i = array.length-1 ; i > 0 ; i--){
+            for(int j = 0 ; j < i ; j++) {
+                if (array[j] > array[j + 1]) {
+                    int tmp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = tmp;
+                }
+            }
+        }
+        printArray(array);
+    }
+
+    public static void printArray(int[] array){
+        for(int i = 0; i < array.length; i++)
+            System.out.print(array[i] + "--");
+        System.out.println();
     }
 }
