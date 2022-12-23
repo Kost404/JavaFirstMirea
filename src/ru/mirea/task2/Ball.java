@@ -9,13 +9,13 @@ public class Ball {
         this.color = "red";
     }
     public double getRadius(){
-        return getRadius();
+        return radius;
     }
     public void setRadius(){
         this.radius = radius;
     }
     public String getColor(){
-        return getColor();
+        return color;
     }
     public void setColor(){
         this.color = color;
